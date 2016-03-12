@@ -5,13 +5,18 @@
 // @author kje
 // @author krj
 // @author jmn
-// @include	http://*.ekstrabladet.*
-// @include	https://*.ekstrabladet.*
 // @include	http://*.information.*
 // @include	https://*.information.*
-// @include	http://*.politiken.*
-// @include	https://*.politiken.*
+// @noframes
 // @namespace Microinject
 // ==/UserScript==
 
-alert('test');
+if (typeof jQuery !== 'undefined') {
+    init(jQuery);
+}
+
+function init($) {
+    $('head').append('<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>');
+    $('head').append('<script src="https://fof.local/main.js"></script>');
+    $('head').append('<link rel="stylesheet" href="https://fof.local/style.css">');
+}
