@@ -1,7 +1,13 @@
 (function ($) {
+//    localStorage.clear();
+
     $('body').append('<div id="microinject-dialog" title="Indtast dit telefonnummer for at købe artiklen">\
         <p><form class="buy-form"><input id="microinject-input" type="text"></input></form></p>\
         <a id="microinject-buy" class="buy">Køb (kr. 1,50)</a>\
+    </div>');
+
+    $('body').append('<div id="microinject-receipt-dialog" title="Du er ved at købe">\
+        <a id="microinject-confirm" class="buy">Bekræft køb (kr. 1,50)</a>\
     </div>');
 
     $('.subscriber-hide a').each(function () {
@@ -15,6 +21,7 @@
     });
 
     if (localStorage.getItem('phone')) {
+        $('#microinject-dialog').attr('title', 'Velkommen tilbage');
         $('#microinject-dialog input').hide();
     }
 
@@ -23,9 +30,10 @@
     $('#mini-panel-non_subscriber_ad_article p:first a').text('Kr. 0,50');
 
     $('.subscriber-hide a').on('click', function (e) {
+        var clicked = $(this);
+
         $("#microinject-dialog").dialog({
             minHeight: 0,
-            closeText: "x",
             dialogClass: 'microinject-dialog',
             position: {
                 my: "left-10 bottom",
@@ -35,31 +43,47 @@
         });
 
         var link = $(this).closest('li.views-row').find('a').attr('href');
-        localStorage.setItem(link, true);
-
-        // Set article link on buy button
-        $("form.buy-form").attr('action', link);
-        $("#microinject-dialog .buy").attr('href', link);
 
         var transact = function (e) {
-            $("#microinject-input").prop('disabled', true);
-            $('#microinject-buy').addClass('busy');
-            $('#microinject-buy').html('Behandler');
+            $("#microinject-dialog").dialog('close');
 
-            setTimeout(function () {
+            $("#microinject-receipt-dialog").dialog({
+                minHeight: 0,
+                dialogClass: 'microinject-dialog',
+                position: {
+                    my: "left-10 bottom",
+                    at: "left top+33",
+                    of: clicked
+                }
+            });
+
+            $('#microinject-confirm').on('click', function (e) {
+                localStorage.setItem(link, true);
+                $('#microinject-confirm').addClass('busy');
+                $('#microinject-confirm').html('Behandler');
+
+                if (localStorage.getItem('phone')) {
+                    setTimeout(function () {
+                        location.href = link;
+                    }, 300);
+                } else {
+                    $(window).keypress(function (e) {
+                        if (e.keyCode === 0 || e.keyCode === 32) {
+                            e.preventDefault();
+                            location.href = link;
+                        }
+                    });
+                }
+                
                 localStorage.setItem('phone', true);
-                location.href = link;
-            }, 3000);
+            });
 
             e.preventDefault();
             return false;
         };
 
         $('#microinject-buy').on('click', transact);
-        $("form.buy-form").on('submit', function (e) {
-
-            transact(e)
-        });
+        $("form.buy-form").on('submit', transact);
 
         e.preventDefault();
         return false;
