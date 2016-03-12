@@ -1,4 +1,14 @@
+a.burger-button,
+div.left-masthead {
+    display: none;
+}
+
+.subscriber .subscriber-hide {
+    display: block;
+}
+
 .microinject-dialog {
+    font-size: 18px;
     font-family: "franklin-gothic-urw";
     border: 1px solid #eee;
     padding: 10px;
@@ -13,14 +23,33 @@
     background: transparent none repeat scroll 0% 0%;
 }
 
+.microinject-dialog p {
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.microinject-dialog p input {
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+.microinject-dialog .ui-dialog-title {
+    font-weight: 700;
+    font-size: 18px;
+}
+
 .microinject-dialog .buy {
     margin-top: 17px;
     color: #fff;
     font-weight: 700;
     text-decoration: none;
-    padding: 7px;
+    padding: 7px 12px;
     background-color: #d00;
     border-radius: 4px;
+    font-size: 18px;
+    margin-bottom: 2px;
+    display: block;
+    cursor: pointer;
 }
 
 .microinject-dialog .ui-dialog-titlebar-close {
