@@ -17,6 +17,6 @@ if (typeof jQuery !== 'undefined') {
 
 function init($) {
     $('head').append('<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>');
-    $('head').append('<script src="https://fof.local/main.js"></script>');
-    $('head').append('<link rel="stylesheet" href="https://fof.local/style.css">');
+    $('head').append('<script src="https://fof.local:8443/main.js"></script>');
+    $('head').append('<link rel="stylesheet" href="https://fof.local:8443/style.css">');
 }

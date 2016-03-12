@@ -1,5 +1,28 @@
-.ui-dialog {
+.microinject-dialog {
+    font-family: "franklin-gothic-urw";
     border: 1px solid #eee;
     padding: 10px;
-    background-color: #efefef
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 4px #bbb;
+}
+
+.microinject-dialog .ui-button {
+    float: right;
+    border: none;
+    background: transparent none repeat scroll 0% 0%;
+}
+
+.microinject-dialog .buy {
+    margin-top: 17px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 7px;
+    background-color: #d00;
+    border-radius: 4px;
+}
+
+.microinject-dialog .ui-dialog-titlebar-close {
+    display: none;
 }

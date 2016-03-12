@@ -1,7 +1,6 @@
 (function ($) {
-    $('body').append('<div id="microinject-dialog" title="Basic dialog">\
-        <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the \'x\' icon.</p>\
-        <button>KØB</button>\
+    $('body').append('<div id="microinject-dialog" title="Læs artiklen">\
+        <a class="buy">Køb (kr. 0,50)</a>\
     </div>');
 
     $('.subscriber-hide a').text('Køb (kr. 0,50)');
@@ -11,7 +10,14 @@
 
     $('.subscriber-hide a').on('click', function (e) {
         $("#microinject-dialog").dialog({
-            position: {my: "left bottom", at: "left top", of: $(this)}
+            minHeight: 0,
+            closeText: "x",
+            dialogClass: 'microinject-dialog',
+            position: {
+                my: "left-10 bottom",
+                at: "left top+28",
+                of: $(this)
+            }
         });
         e.preventDefault();
         return false;
