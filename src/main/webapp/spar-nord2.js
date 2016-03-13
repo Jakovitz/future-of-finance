@@ -31,7 +31,7 @@ window.history.pushState('page2', 'Title', '/om-spar-nord/presse/pressemeddelels
         <a id="microinject-buy" class="buy"><img src="https://fof.local:8443/swipp.svg" style="height: 22px;"><span style="float: right;">Kr. 50</span></a>\
     </div>');
 
-    $('body').append('<div id="microinject-receipt-dialog" title="Bekræft købet">\
+    $('body').append('<div id="microinject-receipt-dialog" title="Bekræft donationen">\
         <a id="microinject-confirm" class="buy"><img src="https://fof.local:8443/swipp.svg" style="height: 22px;"><span style="float: right;">Kr. 50</span></a>\
     </div>');
 
@@ -92,7 +92,7 @@ window.history.pushState('page2', 'Title', '/om-spar-nord/presse/pressemeddelels
                 setTimeout(function () {
                     $('#microinject-confirm').addClass('thanks');
                     $('#ui-dialog-title-microinject-receipt-dialog').text('Tak for donationen');
-                    $('#microinject-confirm').html('<img src="https://fof.local:8443/swipp.svg" style="height: 22px;"><span style="float: right;">Sygehus Nord får 100,-</span>');
+                    $('#microinject-confirm').html('<img src="https://fof.local:8443/swipp.svg" style="height: 22px;"><span style="float: right;">Projektet modtager 100,-</span>');
                 }, 300);
 
             });
