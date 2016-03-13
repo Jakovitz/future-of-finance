@@ -1,13 +1,11 @@
 (function ($) {
-//    localStorage.clear();
-
-    $('body').append('<div id="microinject-dialog" title="Indtast dit telefonnummer for at købe artiklen">\
-        <p><form class="buy-form"><input id="microinject-input" type="text"></input></form></p>\
-        <a id="microinject-buy" class="buy">Køb (kr. 1,50)</a>\
+    $('body').append('<div id="microinject-dialog" title="Betal med Swipp">\
+        <form class="buy-form"><p><input id="microinject-input" type="text" placeholder="Telefonnummer"></input><br /><label><input type="checkbox" /> Husk mig på denne enhed</label></form>\
+        <a id="microinject-buy" class="buy"><img src="https://fof.local:8443/swipp.svg" style="height: 22px;"><span style="float: right;">Kr. 2,25</span></a>\
     </div>');
 
-    $('body').append('<div id="microinject-receipt-dialog" title="Du er ved at købe">\
-        <a id="microinject-confirm" class="buy">Bekræft køb (kr. 1,50)</a>\
+    $('body').append('<div id="microinject-receipt-dialog" title="Bekræft købet">\
+        <a id="microinject-confirm" class="buy"><img src="https://fof.local:8443/swipp.svg" style="height: 22px;"><span style="float: right;">Kr. 2,25</span></a>\
     </div>');
 
     $('.subscriber-hide a').each(function () {
@@ -16,16 +14,16 @@
         if (localStorage.getItem(link)) {
             $(this).hide();
         } else {
-            $(this).text('Køb (kr. 1,50)');
+            $(this).text('Køb (kr. 2,25)');
         }
     });
 
     if (localStorage.getItem('phone')) {
-        $('#microinject-dialog').attr('title', 'Velkommen tilbage');
-        $('#microinject-dialog input').hide();
+        $('#microinject-dialog .buy-form').html('Rasmus (20894692)');
+        $('#microinject-dialog .buy-form').html('<a href="#" style="color: #d00; font-weight: 700; font-size: 13px;">Jeg er ikke Rasmus (20894692)</a>');
     }
 
-    $('.premium-title-label a').text('Køb (kr. 1,50)');
+    $('.premium-title-label a').text('Køb (kr. 2,25)');
     $('#mini-panel-non_subscriber_ad_article h3').text('Læs artiklen');
     $('#mini-panel-non_subscriber_ad_article p:first a').text('Kr. 0,50');
 
@@ -34,6 +32,7 @@
 
         $("#microinject-dialog").dialog({
             minHeight: 0,
+            width: 200,
             dialogClass: 'microinject-dialog',
             position: {
                 my: "left-10 bottom",
@@ -49,6 +48,7 @@
 
             $("#microinject-receipt-dialog").dialog({
                 minHeight: 0,
+                width: 200,
                 dialogClass: 'microinject-dialog',
                 position: {
                     my: "left-10 bottom",
@@ -60,7 +60,7 @@
             $('#microinject-confirm').on('click', function (e) {
                 localStorage.setItem(link, true);
                 $('#microinject-confirm').addClass('busy');
-                $('#microinject-confirm').html('Behandler');
+                $('#microinject-confirm').html('<img src="https://fof.local:8443/swipp.svg" style="height: 22px;"><span style="float: right;">Behandler</span>');
 
                 if (localStorage.getItem('phone')) {
                     setTimeout(function () {
