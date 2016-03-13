@@ -1,3 +1,5 @@
+// https://www.sparnord.dk/om-spar-nord/presse/pressemeddelelser.aspx
+// <div id="setup" class="setup"> .... <div class="list"><div class="list"><ul>
 var announcement = '<li>\
     <div class="lft">\
         <p>13.03.2016</p>\
@@ -8,3 +10,4 @@ var announcement = '<li>\
     <div class="clr"> </div>\
 </li>';
 
+// https://www.sparnord.dk/om-spar-nord/presse/pressemeddelelser/2016/februar-gn-store-nord-aktien-i-milliardhop.aspx
