@@ -1,10 +1,85 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Mar 13, 2016, 11:05:20 AM
-    Author     : jmn
-*/
+a.burger-button,
+div.left-masthead {
+    display: none;
+}
 
+.subscriber .subscriber-hide {
+    display: block;
+}
+
+.microinject-dialog {
+    font-size: 18px;
+    font-family: "franklin-gothic-urw";
+    border: none;
+    padding: 10px !important;
+    background-color: #fff !important;
+    border-radius: 4px;
+    box-shadow: 0 0 4px #bbb;
+    text-align: left !important;
+}
+
+.ui-widget-content
+{
+    background-color: #fff !important;
+    border: none;
+}
+
+.microinject-dialog .ui-widget-header {
+    border: none;
+    background: none;
+    color: #000;
+    text-align: left;
+}
+
+.microinject-dialog .ui-button {
+    float: right;
+    border: none;
+    background: transparent none repeat scroll 0% 0%;
+}
+
+.microinject-dialog p {
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.microinject-dialog input {
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 14px !important;
+}
+
+.microinject-dialog input[type=checkbox] {
+    position: relative;
+    top: -3px;
+}
+
+.microinject-dialog .ui-dialog-title {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.microinject-dialog .buy {
+    margin-top: 7px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 7px 12px 3px 7px;
+    background-color: #d00;
+    border-radius: 4px;
+    font-size: 18px;
+    margin-bottom: 2px;
+    display: block;
+    cursor: pointer;
+}
+
+.microinject-dialog .buy.busy {
+    background-color: #00c000;
+}
+
+.microinject-dialog .buy.thanks {
+    background-color: #c0c000;
+}
+
+.microinject-dialog .ui-dialog-titlebar-close {
+    display: none;
+}
