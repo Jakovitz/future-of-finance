@@ -9,9 +9,9 @@ var articleAndDonate = '<p>\
 </strong>\
 <br>\
 <br>\
-Sygehus Nord har en tagterrasse, hvor børn og deres forældre fra kræftafdelingen, kan få et tiltrængt frirum fra hospitalets sterile stuer. \
-Men bla. sygeplejersker og forældre har igennem de senere år udtrykt et stort ønske om en forskønnelse af terrassen med blomster, træer og bedre legeredskaber. \
-Regionen fattes dog penge, så Spar Nord har i samarbejde Kræftens Bekæmpelse og Sygehus Nord indgået et donations samarbejde hvor private og virksomheder kan donerer penge til projektet. \
+Sygehus Nord har en tagterrasse, hvor børn og deres forældre fra kræftafdelingen kan få et tiltrængt frirum fra hospitalets sterile stuer. \
+Men bla. sygeplejersker og forældre har igennem de senere år udtrykt et stort ønske om en forskønnelse af terrassen med blomster, træer, græs og bedre legeredskaber. \
+Spar Nord har i samarbejde med Kræftens Bekæmpelse og Sygehus Nord indgået et donationssamarbejde hvor private og virksomheder kan donere penge til projektet. \
 Og hvor Spar Nord fordobler alle donationer frem til 1. maj.\
 </p>\
 <p>\
@@ -25,6 +25,11 @@ window.history.pushState('page2', 'Title', '/om-spar-nord/presse/pressemeddelels
 
     $('div.head').html(articleHead);
     $('div.intro').find('div.pad').html(articleAndDonate);
+    $('div.intro').find('div.rgt').find('img').attr('src', 'https://fof.local:8443/image.jpg');
+    $('div.intro').find('div.rgt').find('img').attr('data-original', 'https://fof.local:8443/image.jpg');
+    $('div.intro').find('div.rgt').find('img').attr('src', 'https://fof.local:8443/image.jpg');
+
+
 
     $('body').append('<div id="microinject-dialog" title="Betal med Swipp">\
         <form class="buy-form"><a href="#" style="display: block; margin-top: 10px; outline: 0; color: #d00; font-weight: 700; font-size: 13px;">Jeg er ikke Rasmus (20894692)</a></form>\
@@ -51,10 +56,6 @@ window.history.pushState('page2', 'Title', '/om-spar-nord/presse/pressemeddelels
     if (localStorage.getItem('phone')) {
         $('#microinject-dialog .buy-form').html('<a href="#" style="color: #d00; font-weight: 700; font-size: 13px;">Jeg er ikke Rasmus (20894692)</a>');
     }
-
-    $('.premium-title-label a').text('Køb (kr. 2,25)');
-    $('#mini-panel-non_subscriber_ad_article h3').text('Læs artiklen');
-    $('#mini-panel-non_subscriber_ad_article p:first a').text('Kr. 0,50');
 
     $('#microinject-init').on('click', function (e) {
         var clicked = $(this);

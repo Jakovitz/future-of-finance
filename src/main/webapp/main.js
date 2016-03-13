@@ -83,7 +83,6 @@
         };
 
         $('#microinject-buy').on('click', transact);
-        $("form.buy-form").on('submit', transact);
 
         e.preventDefault();
         return false;
