@@ -20,7 +20,10 @@ var articleAndDonate = '<p>\
 </strong>\
 <br>\
 <br>\
-Sygerplejesker har igennem de senere år udtrykt et stort ønske om en forskønnelse af ...\
+Sygehus Nord har en tagterrasse, hvor børn og deres forældre fra kræftafdelingen, kan få et tiltrængt frirum fra hospitalets sterile stuer. \
+Men bla. sygeplejersker og forældre har igennem de senere år udtrykt et stort ønske om en forskønnelse af terrassen med blomster, træer og bedre legeredskaber. \
+Regionen fattes dog penge, så Spar Nord har i samarbejde Kræftens Bekæmpelse og Sygehus Nord indgået et donations samarbejde hvor private og virksomheder kan donerer penge til projektet. \\n\
+Og hvor Spar Nord fordobler alle donationer frem til 1. maj.\
 </p>\
 <p>\
 <a href="onclick();">Donate</a>\
