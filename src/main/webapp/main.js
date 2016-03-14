@@ -1,11 +1,11 @@
 (function ($) {
     $('body').append('<div id="microinject-dialog" title="Betal med Swipp">\
         <form class="buy-form"><p><input id="microinject-input" type="text" placeholder="Telefonnummer"></input><br /><label><input type="checkbox" /> Husk mig på denne enhed</label></form>\
-        <a id="microinject-buy" class="buy"><img src="https://fof.local:8443/swipp.svg" style="height: 22px;"><span style="float: right;">Kr. 2,25</span></a>\
+        <a id="microinject-buy" class="buy"><img src="https://raw.githubusercontent.com/Jakovitz/future-of-finance/master/src/main/webapp/swipp.svg" style="height: 22px;"><span style="float: right;">Kr. 2,25</span></a>\
     </div>');
 
     $('body').append('<div id="microinject-receipt-dialog" title="Bekræft købet">\
-        <a id="microinject-confirm" class="buy"><img src="https://fof.local:8443/swipp.svg" style="height: 22px;"><span style="float: right;">Kr. 2,25</span></a>\
+        <a id="microinject-confirm" class="buy"><img src="https://raw.githubusercontent.com/Jakovitz/future-of-finance/master/src/main/webapp/swipp.svg" style="height: 22px;"><span style="float: right;">Kr. 2,25</span></a>\
     </div>');
 
     $('.subscriber-hide a').each(function () {
@@ -60,7 +60,7 @@
             $('#microinject-confirm').on('click', function (e) {
                 localStorage.setItem(link, true);
                 $('#microinject-confirm').addClass('busy');
-                $('#microinject-confirm').html('<img src="https://fof.local:8443/swipp.svg" style="height: 22px;"><span style="float: right;">Behandler</span>');
+                $('#microinject-confirm').html('<img src="https://raw.githubusercontent.com/Jakovitz/future-of-finance/master/src/main/webapp/swipp.svg" style="height: 22px;"><span style="float: right;">Behandler</span>');
 
                 if (localStorage.getItem('phone')) {
                     setTimeout(function () {
